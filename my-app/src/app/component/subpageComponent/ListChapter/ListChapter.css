@@ -1,0 +1,12 @@
+.subpage-chapter {
+  font-size: 14px;
+  font-weight: 600;
+  overflow: hidden;
+  line-height: 36px;
+  display: block;
+  color: rgba(0, 0, 0, 0.749);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+}

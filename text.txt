@@ -1,0 +1,34 @@
+tạo tự dông api phân loại thể loại bằng thẻ tag 
+nếu thẻ tag trung thì lấy 1 giá trị duy nhất lưu vào data
+
+tôi muốn crawl theo category truyện full
+--  lấy tất cả link category ngôn tình api  ht
+sau khi lấy link thì sẻ dùng for để lọc lấy link 
+và tiến hành craw tất cả các link nếu link subpage linkstory trùng lặp sẻ next
+
+cawl danh  danh sách link api ht
+update chuyện bằng tay
+crawl update chapter
+
+
+tối ưu lại crawl truyện full
+--> chia ứng dụng ra và gọp lại thành một api hoàn chỉnh
+thêm proxy nếu web trặn ip
+
+chart truy cập trang mỗi ngày success
+thêm phần crawl bảng list error và success story
+
+  Docker Containers
+
+properti 
+
+        data: subpageResult[0],
+        chapter: resultChapter[0],
+        totalChapter: countResult[0].NumberOfChapters,
+        curenPage: curenPage,
+        totalPage: totalPage,
+
+
+<>>>>>>>>>>>>>>>>>>>>>>>>>>>>error<<<<<<<<<<<<<<<<<<<<<<<<<>
+- error: category post updata ht
+- errr add chapter

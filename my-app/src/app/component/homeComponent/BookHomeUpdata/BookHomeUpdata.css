@@ -1,0 +1,47 @@
+.new-book-wraper {
+  display: flex;
+  align-items: center;
+  border-top: 1px dotted #ccc;
+  cursor: pointer;
+}
+
+.new-book-wraper:last-child {
+  border-bottom: 1px dotted #ccc;
+}
+
+.time-home-new,
+.title-home-new {
+  padding: 10px 9px;
+}
+
+.genre-home-new,
+.chapter-home-new {
+  padding: 10px 9px;
+}
+
+.genre-home-new {
+  height: 40px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+}
+
+.home-shareds,
+.home-shared {
+  color: rgb(44, 19, 19);
+  font-size: 14px !important;
+  font-weight: 500;
+  padding-bottom: 3px;
+}
+
+.home-shared:hover {
+  border-bottom: 1px solid #ccc;
+}
+
+.home-shared.chapter {
+  color: rgb(117, 68, 242) !important;
+  font-size: 14px !important;
+  font-weight: 700;
+}

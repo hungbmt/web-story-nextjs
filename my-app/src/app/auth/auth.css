@@ -1,0 +1,7 @@
+.auth-box {
+  width: 400px;
+  display: flex;
+  margin: 0 auto;
+  margin-top: 50px;
+  background-color: blue;
+}

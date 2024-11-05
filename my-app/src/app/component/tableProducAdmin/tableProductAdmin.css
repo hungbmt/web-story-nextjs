@@ -1,0 +1,11 @@
+.table-th-joint {
+  text-align: center !important;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.table-td-joint {
+  display: flex;
+  justify-content: center;
+}

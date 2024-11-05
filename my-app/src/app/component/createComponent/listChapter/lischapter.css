@@ -1,0 +1,62 @@
+.list-chapter-update-container {
+  padding: 35px 0;
+  height: calc(270px * 1.4);
+  overflow-y: scroll;
+}
+
+.list-chapter-updata-inf {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.list-chapter-updata-right span {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 30px;
+  color: rgba(29, 29, 28, 0.679);
+  cursor: pointer;
+}
+
+.list-chapter-updata-right span:hover {
+  color: black;
+}
+
+.list-chapter-updata-left {
+  text-align: center;
+}
+
+.list-chapter-updata-inf:hover {
+  border: 2px solid #f03b3bcc;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  text-align: center;
+  color: black;
+}
+
+.list-chapter-updata-left button:hover {
+  color: blue;
+}
+
+.pagination-list-chapter-updata {
+  margin: 10px auto;
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  justify-content: center;
+}
+
+.pagination-list-chapter-updata button {
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.pagination-list-chapter-updata input {
+  width: 50px;
+  text-align: center;
+}
+
+.pagination-list-chapter-updata .active {
+  background-color: #4b4949cc;
+}

@@ -1,0 +1,26 @@
+.related-story-box {
+  display: flex;
+  align-items: center;
+  border: 3px double #ccc;
+  padding: 3px 6px;
+  margin: 10px 0;
+}
+
+.img-related {
+  width: 50px;
+}
+.related-story-box img {
+  width: 50px;
+}
+
+.related-story-box h3 {
+  font-size: 14px;
+  padding: 0 10px;
+  height: 14px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  color: black;
+}

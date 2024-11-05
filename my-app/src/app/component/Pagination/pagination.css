@@ -1,0 +1,18 @@
+.pagination-subpage-box button {
+  padding: 5px 0;
+  width: 80px;
+  margin: 0 6px 20px;
+  border-radius: 6px;
+  outline: none;
+  border: 1px solid #ccc;
+}
+
+.pagination-subpage-box span {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.pagination-subpage-box .active {
+  background-color: blue;
+}

@@ -1,0 +1,54 @@
+.btn-submit {
+  border: 1px solid #ccc;
+  padding: 5px 8px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.setting-box span {
+  margin-left: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  margin-right: 10px;
+}
+
+.setting-box input {
+  padding: 6px 8px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.info-crawl-story-wrap {
+  margin: 80px 0;
+}
+
+.info-crawl-story-wrap span > span {
+  font-size: 16px;
+  font-weight: 800;
+  color: rgba(59, 12, 246, 0.704);
+}
+
+.info-crawl-story-wrap span {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(51, 50, 50, 0.726);
+  text-transform: capitalize;
+}
+.text-tabs button {
+  padding: 6px 30px;
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: capitalize;
+}
+
+.example {
+  color: #302e2e;
+  font-weight: 700;
+}
+
+.example span {
+  font-size: 14px;
+  font-weight: 500;
+  color: #342b2b;
+}

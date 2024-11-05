@@ -1,0 +1,5 @@
+.content-join{
+    max-height: 300px;
+    margin: 20px 0;
+    overflow-y: scroll;
+}

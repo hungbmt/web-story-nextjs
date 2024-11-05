@@ -1,0 +1,38 @@
+.title-Subpage {
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+}
+
+.title-Subpage h2 {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.668);
+}
+
+.desc-subpage {
+  margin: 0 10px 40px 0;
+}
+
+.text-desc {
+  margin-top: 10px;
+  height: 200px;
+  overflow-y: scroll;
+  font-size: 12px;
+  line-height: 1rem;
+  color: #625252;
+}
+
+.desc-subpage h3 {
+  margin-top: 20px;
+  font-size: 1rem;
+  line-height: 2rem;
+  padding-right: 6px;
+}
+
+
+
+.text-desc span {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0 10px;
+}

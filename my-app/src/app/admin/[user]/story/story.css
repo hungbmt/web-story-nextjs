@@ -1,0 +1,41 @@
+.list-story table {
+  width: 100%;
+}
+
+.admin-wraprer {
+  position: relative;
+}
+
+.list-story th,
+.list-story td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+.btn-story {
+  border: 1px solid #ccc;
+  padding: 5px 7px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.add-Chapter {
+  padding: 15px 20px;
+  background-color: rgb(248, 248, 248);
+  margin-left: 20px;
+  font-weight: 700;
+  border: 1px solid #ccc;
+}
+
+.list-chapter-updata-box {
+  margin-top: 40px;
+}
+
+.list-chapter-updata-box .title-chapter-updata {
+  border-bottom: 1px solid #ccc;
+  padding: 5px 10px;
+  font-weight: 600;
+}

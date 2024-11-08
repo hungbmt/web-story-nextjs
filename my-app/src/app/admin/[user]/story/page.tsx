@@ -95,7 +95,7 @@ const Story = () => {
     if (slugStory) {
       await apidataUpdata(dispatch, slugStory, page); // Chờ đợi dữ liệu từ API
     }
-  }, [dispatch, slugStory]);
+  }, [dispatch, page, slugStory]);
 
   // handle submit story
   const HandleSubmitCreateStory = async (e: React.FormEvent) => {

@@ -368,6 +368,22 @@ class CategoryController {
       next(error);
     }
   }
+  async DriveLockStory(req, res, next) {
+    const { slug, chapter } = req.params;
+    const { is_locked } = req.body;
+    console.log(slug, chapter);
+    try {
+      const sql = `UPDATE chapter SET is_locked = ? WHERE slug = ? AND slug_1 = ?`;
+      await connect.query(sql, [is_locked, slug, chapter]);
+      return res.status(200).json({
+        success: true,
+        message: "success",
+      });
+    } catch (error) {
+      console.log(error);
+      next(error);
+    }
+  }
 }
 
 module.exports = CategoryController;

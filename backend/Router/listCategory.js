@@ -43,6 +43,12 @@ function listCategory() {
     veryToken,
     controller.updataChapter
   );
+
+  router.put(
+    "/drive-lock-story/:slug/:chapter",
+    veryToken,
+    controller.DriveLockStory
+  );
   return router;
 }
 module.exports = listCategory;

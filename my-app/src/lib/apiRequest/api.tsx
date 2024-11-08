@@ -132,6 +132,11 @@ import {
   updataStoryStart,
   updataStorySuccess,
 } from "../features/updataStory/updataStorySlider";
+import {
+  driveLockStoryFalse,
+  driveLockStoryStart,
+  driveLockStorySuccess,
+} from "../features/driveLockStory/driveLockStorySlice";
 
 const localhostApi = "http://localhost:3000/";
 
@@ -584,5 +589,28 @@ export const apiUpdataStory = async (
     dispatch(updataStorySuccess(reps.data));
   } catch (error) {
     dispatch(updataStoryFalse(error));
+  }
+};
+
+// drive lock story :slug/:chapter
+export const apiDriveLockStory = async (
+  dispatch: AppDispatch,
+  slug: string,
+  chapter: string,
+  data: any,
+  accessToken: string
+) => {
+  dispatch(driveLockStoryStart());
+  try {
+    let reps = await apiReq.put(
+      `/api/v1/drive-lock-story/${slug}/${chapter}`,
+      data,
+      {
+        headers: { token: `Bearer ${accessToken}` },
+      }
+    );
+    dispatch(driveLockStorySuccess(reps.data));
+  } catch (error) {
+    dispatch(driveLockStoryFalse(error));
   }
 };

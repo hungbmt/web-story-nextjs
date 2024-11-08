@@ -21,7 +21,7 @@ export interface typeGethome {
 }
 
 export interface typechapter {
-  id: Number;
+  id: number;
   slug: string;
   slug_1: string;
   title: string;
@@ -32,6 +32,7 @@ export interface typechapter {
   isTrash: number;
   time: Date;
   time_update: Date;
+  is_locked: boolean;
 }
 
 // export interface typeRelatedStory {
@@ -63,12 +64,12 @@ export interface typeCategory {
   slug: string;
 }
 
-export  interface typeErrorStory{
+export interface typeErrorStory {
   id: string;
-  error_message:string,
-  name_story:string,
-  name_chapter:string,
-  slug_chapter:string,
-  slug_1:string,
-  slug_2:string,
+  error_message: string;
+  name_story: string;
+  name_chapter: string;
+  slug_chapter: string;
+  slug_1: string;
+  slug_2: string;
 }

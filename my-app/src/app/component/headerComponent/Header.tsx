@@ -6,9 +6,8 @@ import "./Header.css";
 import { Col, Container, Row } from "react-bootstrap";
 interface type {
   dataCtegory: any;
-  dataList: any;
 }
-const Header: React.FC<type> = ({ dataCtegory, dataList }) => {
+const Header: React.FC<type> = ({ dataCtegory }) => {
   const [showdirectory, setShowdirectory] = useState(false);
   const [showCategory, setShowcategory] = useState(false);
   const [showNavBarRp, setShowNavBarRp] = useState(false);
@@ -55,11 +54,9 @@ const Header: React.FC<type> = ({ dataCtegory, dataList }) => {
                   <>
                     <div className="dropdow-hearder-directory">
                       <ul>
-                        {dataList.map((data: any) => (
-                          <Link href={"/danh-sach/" + data?.slug} key={data.id}>
-                            <li>{data?.list}</li>
-                          </Link>
-                        ))}
+                        <Link href={"/danh-sach/truyen-moi"}>
+                          <li>truyện mới</li>
+                        </Link>
                       </ul>
                     </div>
                   </>

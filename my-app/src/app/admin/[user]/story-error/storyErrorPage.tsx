@@ -1,6 +1,5 @@
-// @flow
 "use client";
-import * as React from "react";
+import React from "react";
 import { Container } from "react-bootstrap";
 import "./storyError.css";
 import { useEffect } from "react";
@@ -11,7 +10,7 @@ import {
 } from "@/lib/apiRequest/api";
 import { useDispatch } from "react-redux";
 import { useAppSelector } from "@/lib/hook";
-import { createAxios } from "@/Helper/CreateInterceptors";
+import { CreateAxios } from "@/Helper/CreateInterceptors";
 import { LoginSuccess } from "@/lib/features/auth/login/loginSlider";
 import { typeErrorStory } from "@/type/story.type";
 import Link from "next/link";
@@ -28,7 +27,7 @@ const StoryErrorPage = () => {
   const stateLogin = useAppSelector((state) => state.loginReducer);
   const accesstoken = stateLogin.data.AccessToken;
   const user = stateLogin.data;
-  const CreateApiRf = createAxios(user, dispatch, LoginSuccess);
+  const CreateApiRf = CreateAxios(user, dispatch, LoginSuccess);
   const statedError = useAppSelector((state) => state.getErrorReducer);
   const dataError: typeErrorStory[] = statedError.data.data;
   const stateGetErrorStory = useAppSelector(
@@ -36,7 +35,7 @@ const StoryErrorPage = () => {
   );
   const dataChapterStory = stateGetErrorStory.data.data;
 
-  const getStoryError = async () => {
+  const getStoryError = React.useCallback(async () => {
     if (!accesstoken || !CreateApiRf) {
       console.warn("Access token or CreateApiRf is missing.");
       return;
@@ -47,11 +46,11 @@ const StoryErrorPage = () => {
     } catch (err) {
       console.error("Error in apiNotifierError:", err);
     }
-  };
+  }, [CreateApiRf, accesstoken, dispatch]);
 
   useEffect(() => {
     getStoryError();
-  }, [accesstoken, dispatch]);
+  }, [getStoryError]);
 
   const HandleshowAction = (id: string) => {
     setShowAction((prev) => ({
@@ -66,15 +65,15 @@ const StoryErrorPage = () => {
     setChapter(slug_2);
   };
 
-  const getDataChapter = async () => {
+  const getDataChapter = React.useCallback(async () => {
     if (subpage && chapter) {
-      apiChapterStory(dispatch, subpage, chapter).then();
+      await apiChapterStory(dispatch, subpage, chapter, accesstoken).then();
     }
-  };
+  }, [accesstoken, chapter, dispatch, subpage]);
 
   useEffect(() => {
     getDataChapter();
-  }, [chapter, dispatch, subpage]);
+  }, [getDataChapter]);
 
   // submit modify chapter
   const HandleSubmitupdataChapter = async (

@@ -1,5 +1,5 @@
 "use client";
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import "./story.css";
 import { ToastContainer, toast } from "react-toastify";
 import { useAppDispatch, useAppSelector } from "@/lib/hook";
@@ -20,11 +20,15 @@ import ListChapter from "@/app/component/createComponent/listChapter/ListChapter
 import FormAddChapter from "@/app/component/createComponent/FormAddChapter/FormAddChapter";
 import AdminLayout from "@/app/layout/adminLayout/adminLayout";
 import { LoginSuccess } from "@/lib/features/auth/login/loginSlider";
-import { createAxios } from "@/Helper/CreateInterceptors";
+import { CreateAxios } from "@/Helper/CreateInterceptors";
 interface DataDomType {
   id: string;
   [key: string]: any;
 }
+type typeGethome = {
+  slug: string;
+  // other properties
+};
 const Story = () => {
   const [showFormCreate, setShowFormCreate] = useState<boolean>(false);
   const [showInfoChapter, setShowingChapter] = useState<boolean>(false);
@@ -42,7 +46,7 @@ const Story = () => {
     (state) => state.createContentReducer
   );
   // const dataUpdateChaoter = stateUpdateChapter.data;
-  const slugStory: any = stateUpdateChapter.data?.slug;
+  const slugStory = stateUpdateChapter.data?.slug;
   const nameForm = "create story";
   const dataStory = stateListProduct.data.data;
   const dispatch = useAppDispatch();
@@ -61,7 +65,7 @@ const Story = () => {
   const currentPage = stateDataUpdata.data?.currentPage;
 
   // refeshtoken
-  const CreateApiRf = createAxios(user, dispatch, LoginSuccess);
+  const CreateApiRf = CreateAxios(user, dispatch, LoginSuccess);
   const StatGetChapterStory = useAppSelector(
     (state) => state.chapterStoryReducer
   );
@@ -73,8 +77,8 @@ const Story = () => {
   }, [dispatch, accessToken, CreateApiRf]);
 
   useEffect(() => {
-    apiLisProductAdmin().then();
-  }, []);
+    apiLisProductAdmin();
+  }, [apiLisProductAdmin]);
 
   const HandleClickGim = async (id: Number, slug: String, checked: Number) => {
     const data = {
@@ -152,10 +156,10 @@ const Story = () => {
       setSubpage(slug);
       setChapter(slug_1);
       setLoadingChapter(true); // Set loading to true before the API call
-      await apiChapterStory(dispatch, slug, slug_1);
+      await apiChapterStory(dispatch, slug, slug_1, accessToken);
       setLoadingChapter(false); // Set loading to false after the API call
     },
-    [dispatch]
+    [accessToken, dispatch]
   );
 
   useEffect(() => {
@@ -310,4 +314,4 @@ const Story = () => {
   );
 };
 
-export default Story;
+export default React.memo(Story);

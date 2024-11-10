@@ -11,7 +11,7 @@ import {
 import React, { useEffect, useState } from "react";
 import { Container, Form, Row } from "react-bootstrap";
 import { typechapter } from "@/type/story.type";
-import { createAxios } from "@/Helper/CreateInterceptors";
+import { CreateAxios } from "@/Helper/CreateInterceptors";
 import { LoginSuccess } from "@/lib/features/auth/login/loginSlider";
 export interface typechapters {
   data: {
@@ -34,7 +34,7 @@ const ChapterCp = () => {
   const stateUser = useAppSelector((state) => state.loginReducer.data);
   const username = stateUser.data.username;
   const accesstoken = stateUser.AccessToken;
-  const createApiRf = createAxios(stateUser, dispatch, LoginSuccess);
+  const createApiRf = CreateAxios(stateUser, dispatch, LoginSuccess);
 
   // Convert subpage to a string if it's an array
   if (Array.isArray(subpage)) {
@@ -68,7 +68,7 @@ const ChapterCp = () => {
     setShowTableErrorRepost(false);
   };
 
-  const creatAxios = createAxios(stateUser, dispatch, LoginSuccess);
+  const creatAxios = CreateAxios(stateUser, dispatch, LoginSuccess);
 
   const HandleTextValue = (e: React.ChangeEvent<HTMLInputElement>) => {
     const data = e.target.value;

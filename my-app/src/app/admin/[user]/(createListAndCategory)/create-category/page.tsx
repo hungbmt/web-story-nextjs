@@ -11,7 +11,7 @@ import { useAppDispatch, useAppSelector } from "@/lib/hook";
 import CategoryLayout from "@/app/layout/categoryformLayout/categoryLayout";
 import { LoginSuccess } from "@/lib/features/auth/login/loginSlider";
 import axios from "axios";
-import { createAxios } from "@/Helper/CreateInterceptors";
+import { CreateAxios } from "@/Helper/CreateInterceptors";
 
 interface dataCate {
   id: string;
@@ -28,7 +28,7 @@ const CreateCategory = () => {
   const dispatch = useAppDispatch();
   const [dataCategory, setDataCategory] = useState<dataCate[]>([]);
   const [inputValue, setInputValue] = useState<string>("");
-  const CreateApiRf = createAxios(user, dispatch, LoginSuccess);
+  const CreateApiRf = CreateAxios(user, dispatch, LoginSuccess);
   const [responseMessage, setResponseMessage] = useState("");
   const [loading, setLoading] = useState(false);
   const [isCategoryCreated, setIsCategoryCreated] = useState(false); // Biến trạng thái mới
@@ -73,7 +73,6 @@ const CreateCategory = () => {
         HandleSubmit={HandleSubmit}
         inputValue={inputValue}
         handleChange={handleChange}
-        data={dataCategory}
         dataDb={dataCategorys}
         loading={loading}
         responseMessage={responseMessage}

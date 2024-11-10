@@ -10,7 +10,8 @@
 }
 
 .desc-subpage {
-  margin: 0 10px 40px 0;
+  margin: 0 14px 40px 14px;
+  padding: 2px;
 }
 
 .text-desc {
@@ -28,8 +29,6 @@
   line-height: 2rem;
   padding-right: 6px;
 }
-
-
 
 .text-desc span {
   font-size: 14px;

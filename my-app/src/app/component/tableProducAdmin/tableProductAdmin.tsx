@@ -172,10 +172,10 @@ const TableProductAdmin: React.FC<typeTableAdmin> = ({
       setSubpage(slug);
       setChapter(slug_1);
       setLoadingChapter(true); // Set loading to true before the API call
-      await apiChapterStory(dispatch, slug, slug_1);
+      await apiChapterStory(dispatch, slug, slug_1, accesstoken);
       setLoadingChapter(false); // Set loading to false after the API call
     },
-    [dispatch]
+    [accesstoken, dispatch]
   );
 
   useEffect(() => {

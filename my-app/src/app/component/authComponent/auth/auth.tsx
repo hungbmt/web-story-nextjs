@@ -13,22 +13,22 @@ const AuthComponent = () => {
   const accessToken = useAppSelector(
     (state) => state.loginReducer.data.AccessToken
   );
-  // useEffect(() => {
-  //   if (accessToken) {
-  //     const jwtDecodes: any = jwtDecode(accessToken);
-  //     const isExpired = jwtDecodes.exp < Math.floor(Date.now() / 1000);
-  //     try {
-  //       if (isExpired) {
-  //         router.push("/auth");
-  //       } else {
-  //         router.push("/admin");
-  //       }
-  //     }catch (error){
-  //       router.push("/auth");
-  //       console.log(error);
-  //     }
-  //   }
-  // },[accessToken, router]);
+  useEffect(() => {
+    if (accessToken) {
+      const jwtDecodes: any = jwtDecode(accessToken);
+      const isExpired = jwtDecodes.exp < Math.floor(Date.now() / 1000);
+      try {
+        if (isExpired) {
+          router.push("/auth");
+        } else {
+          router.push("/admin");
+        }
+      }catch (error){
+        router.push("/auth");
+        console.log(error);
+      }
+    }
+  },[accessToken, router]);
 
   const HandleSubmitAuth = async (
     e: React.FormEvent<HTMLFormElement>

@@ -3,7 +3,7 @@
 import MyChart from "@/app/component/dashBoardComponent/chart/chart";
 import ParameterComponent from "@/app/component/dashBoardComponent/parameter/parameter";
 import NotiFiCrawlStory from "@/app/component/notifiCrawlStory/notifiCrawlStory";
-import { createAxios } from "@/Helper/CreateInterceptors";
+import { CreateAxios } from "@/Helper/CreateInterceptors";
 import { apiChartViewDashBoard, apiParameter } from "@/lib/apiRequest/api";
 import { LoginSuccess } from "@/lib/features/auth/login/loginSlider";
 import { useAppDispatch, useAppSelector } from "@/lib/hook";
@@ -17,7 +17,7 @@ export default function DashBoard() {
   const data = useAppSelector((state) => state.chartDashBoardReducer.data);
   const dataParameter = useAppSelector((state) => state.parameterReducer.data);
   const createAxioss = useMemo(
-    () => createAxios(stateUSer, dispatch, LoginSuccess),
+    () => CreateAxios(stateUSer, dispatch, LoginSuccess),
     [dispatch, stateUSer]
   );
   useEffect(() => {

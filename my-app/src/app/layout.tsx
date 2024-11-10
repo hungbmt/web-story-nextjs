@@ -3,14 +3,10 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import StoreProvider from "./StoreProvider";
 const inter = Inter({ subsets: ["latin"] });
-import "bootstrap/dist/css/bootstrap.min.css";
-import 'react-toastify/dist/ReactToastify.css';
-import dynamic from "next/dynamic";
 import Script from "next/script";
-import Link from "next/link";
-const Header = dynamic(() => import("./component/headerComponent/Header"), {
-  ssr: false,
-});
+import "bootstrap/dist/css/bootstrap.min.css";
+import "react-toastify/dist/ReactToastify.css";
+
 export const metadata: Metadata = {
   applicationName: "Web Truyện",
   keywords: ["web truyện", "truyện ngôn tình", "kiếm hiệp"],
@@ -39,7 +35,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className} suppressHydrationWarning={true}>
         <StoreProvider>{children}</StoreProvider>
-        <Script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js" />
+        <Script
+          src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js"
+          strategy="lazyOnload"
+        />
       </body>
     </html>
   );

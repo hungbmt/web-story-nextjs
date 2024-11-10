@@ -2,13 +2,13 @@ import { typeGethome } from "@/type/story.type";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 interface CreateContent {
   isFetching: boolean;
-  data: typeGethome[];
+  data: typeGethome;
   error: string | null;
 }
 
 const initialState: CreateContent = {
   isFetching: false,
-  data: [],
+  data: {} as typeGethome,
   error: null,
 };
 
@@ -22,7 +22,7 @@ export const CreateContentSlice = createSlice({
     CreateContentSuccess: (
       state,
       action: PayloadAction<{
-        data: typeGethome[];
+        data: typeGethome;
       }>
     ) => {
       state.isFetching = false;

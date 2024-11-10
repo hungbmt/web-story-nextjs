@@ -1,4 +1,8 @@
+.info-holder-wraper {
+  margin: 0 13px;
+}
+
 .info-holder-wraper tr {
-    margin: 10px 0;
-    display: block;
+  margin: 10px 0;
+  display: block;
 }

@@ -20,7 +20,8 @@ const FormCreateStory: React.FC<typeFont> = ({
 }) => {
   // Ensure data is of type object (typeGethome) before accessing properties
   const isDataObject = typeof data === "object";
-  const [ArrayGenre, setArrayGenre] = useState<string[]>([]);
+  // const [ArrayGenre, setArrayGenre] = useState<string[]>([]);
+  const [ArrayGenre, setArrayGenre] = useState<string>();
   const [dataArrayGenre, setDataArrayGenre] = useState<string[]>([]);
 
   useEffect(() => {
@@ -30,7 +31,7 @@ const FormCreateStory: React.FC<typeFont> = ({
       setArrayGenre(parsedGenres);
     } catch (error) {
       console.error("Failed to parse JSON:", error);
-      setArrayGenre([]); // Set to empty array on error
+      setArrayGenre(""); // Set to empty array on error
     }
   }, [data, isDataObject]);
   useEffect(() => {
@@ -45,7 +46,7 @@ const FormCreateStory: React.FC<typeFont> = ({
     }
   }, [ArrayGenre, isDataObject]);
   console.log();
-  const dataARrr = dataArrayGenre.map((data) => data?.genres);
+  const dataARrr = dataArrayGenre.map((data: any) => data?.genres);
   return (
     <>
       <form className="form-create-story" onSubmit={HandleSubmitCreateStory}>

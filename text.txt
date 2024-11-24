@@ -32,3 +32,15 @@ properti
 <>>>>>>>>>>>>>>>>>>>>>>>>>>>>error<<<<<<<<<<<<<<<<<<<<<<<<<>
 - error: category post updata ht
 - errr add chapter
+
+
+sự dụng Placeholders boostrap làm loading in storybook
+
+
+
+---> sử lý Truyện Mới Cập Nhật
+chia đoi 7/3 title 
+tile / hot new full
+hot nêu top ngày top tuần top tháng top năm card nao có view cao nhất sẻ có hot không thì để ""
+new mặc định 123
+full lấy data if dataGim?.statusStory full thì "full" không để ""

@@ -18,6 +18,7 @@ export interface typeGethome {
   source: string;
   category: string;
   list: string;
+  viewDay: [];
 }
 
 export interface typechapter {

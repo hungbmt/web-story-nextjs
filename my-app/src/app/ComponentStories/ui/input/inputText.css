@@ -1,0 +1,22 @@
+.input-box {
+  display: flex;
+  align-items: center;
+  padding: 4px 20px;
+  background-color: white;
+  border: 1px solid #ccc;
+  margin: 10px 0;
+  border-radius: 50px;
+}
+
+.input-box input {
+  border: none;
+  padding: 10px 5px;
+  width: calc(100% - 10px);
+  margin-left: 5px;
+  border-left: 1px solid #ccc;
+}
+
+.input-box input:focus {
+  border: none;
+  outline: none;
+}

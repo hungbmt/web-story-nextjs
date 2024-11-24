@@ -29,7 +29,10 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/app/admin/[user]/page.tsx"
-, "src/app/book/[subpage]/subpage.tsx", "src/Helper/CreateInterceptors.tsx"  ],
+    "src/app/admin/[user]/page.tsx",
+    "src/app/book/[subpage]/subpage.tsx",
+    "src/Helper/CreateInterceptors.tsx",
+    "src/app/ComponentStories/ui/icon/icon.js"
+  ],
   "exclude": ["node_modules"]
 }

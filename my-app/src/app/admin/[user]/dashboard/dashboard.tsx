@@ -16,16 +16,23 @@ export default function DashBoard() {
   const accessToken = stateUSer.AccessToken;
   const data = useAppSelector((state) => state.chartDashBoardReducer.data);
   const dataParameter = useAppSelector((state) => state.parameterReducer.data);
-  const createAxioss = useMemo(
-    () => CreateAxios(stateUSer, dispatch, LoginSuccess),
-    [dispatch, stateUSer]
-  );
+
+  // const createAxioss = useMemo(
+  //   () => CreateAxios(stateUSer, dispatch, LoginSuccess),
+  //   [dispatch, stateUSer]
+  // );
+  const CreateApiRf = CreateAxios(stateUSer, dispatch, LoginSuccess);
+  const createAxioss = useEffect(() => {
+    if (accessToken) {
+      apiChartViewDashBoard(dispatch, accessToken, CreateApiRf);
+    }
+  }, [dispatch, accessToken, CreateApiRf]);
+
   useEffect(() => {
-    apiChartViewDashBoard(dispatch, accessToken, createAxioss);
-  }, [dispatch, accessToken, createAxioss]);
-  useEffect(() => {
-    apiParameter(dispatch, accessToken, createAxioss);
-  }, [accessToken, dispatch, createAxioss]);
+    if (accessToken) {
+      apiParameter(dispatch, accessToken, CreateApiRf);
+    }
+  }, [accessToken, dispatch, CreateApiRf]);
   return (
     <Container>
       <Row>

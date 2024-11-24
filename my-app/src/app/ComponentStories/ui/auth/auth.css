@@ -37,18 +37,16 @@
   margin-bottom: 10px;
 }
 
-/* .btn-aut button {
-  padding: 5px 10px;
+.btn-aut button {
+  padding: 5px 30px;
   border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
+  /* border-bottom-left-radius: 10px; */
 }
 
 .btn-aut button ~ button {
   border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-} */
+  border-top-left-radius: 80px;
+}
 
 .Form-auth {
   margin: 0 auto;
@@ -56,40 +54,4 @@
   justify-content: center;
   flex-direction: column;
   padding-bottom: 20px;
-}
-
-.input-box {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  padding: 4px 20px;
-  background-color: white;
-  border: 1px solid #ccc;
-  margin: 10px 0;
-  border-radius: 50px;
-}
-
-.input-box input {
-  border: none;
-  padding: 10px 5px;
-  width: calc(100% - 10px);
-  margin-left: 5px;
-  border-left: 1px solid #ccc;
-}
-
-.input-box input:focus {
-  border: none;
-  outline: none;
-}
-
-.btn-form-auth {
-  margin: 0 6px;
-}
-
-.btn-form-auth button {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  padding: 5px 15px;
-  border-radius: 10px;
 }

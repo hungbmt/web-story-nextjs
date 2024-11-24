@@ -16,7 +16,6 @@ const MyChart: React.FC<typedata> = ({ data }) => {
   const daydata = useMemo(() => {
     return data?.map((item) => moment(item.date).format("L"));
   }, [data]);
-  console.log(daydata);
   const chartRef = useRef<HTMLCanvasElement>(null);
   useEffect(() => {
     // Đăng ký tất cả các thành phần của Chart.js

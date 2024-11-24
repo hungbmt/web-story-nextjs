@@ -25,7 +25,7 @@ class GetHomeController {
         // storyUpdate
         connect.query(`
                     SELECT 
-                        s.id,s.title,s.time_update,s.time,s.genres,s.slug,
+                        s.id,s.title,s.time_update,s.time,s.genres,s.slug,s.statusStory,view_day,
                         (
                             SELECT COUNT(c.id)
                             FROM chapter c

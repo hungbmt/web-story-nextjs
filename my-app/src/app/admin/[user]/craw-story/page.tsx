@@ -6,7 +6,7 @@ import {
   apiMuchLinkStorytruyenFull,
 } from "@/lib/apiRequest/api";
 import { useAppDispatch } from "@/lib/hook";
-import React, { use, useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./crawlStory.css";
 import { Tab, Tabs } from "react-bootstrap";
 import AdminLayout from "@/app/layout/adminLayout/adminLayout";

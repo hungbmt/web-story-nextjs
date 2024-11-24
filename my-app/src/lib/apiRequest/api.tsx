@@ -457,11 +457,11 @@ export const apiProductCategory = async (
 export const apiChartViewDashBoard = async (
   dispatch: AppDispatch,
   accessToken: string,
-  createAxios: any
+  CreateApiRf: any
 ) => {
   dispatch(chartStart());
   try {
-    let reps = await createAxios.get("/api/v1/chart-viewpage", {
+    let reps = await CreateApiRf.get("/api/v1/chart-viewpage", {
       headers: { token: `Bearer ${accessToken}` },
     });
     dispatch(chartSuccess(reps.data));
@@ -473,11 +473,11 @@ export const apiChartViewDashBoard = async (
 export const apiParameter = async (
   dispatch: AppDispatch,
   accessToken: string,
-  createAxios: any
+  CreateApiRf: any
 ) => {
   dispatch(parameterStart());
   try {
-    const resp = await createAxios.get("/api/v1/parameter", {
+    const resp = await CreateApiRf.get("/api/v1/parameter", {
       headers: { token: `Bearer ${accessToken}` },
     });
     dispatch(parameterSuccess(resp.data));

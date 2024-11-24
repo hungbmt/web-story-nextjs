@@ -1,8 +1,9 @@
 import { typeGethome } from "@/type/story.type";
 import Link from "next/link";
 import "./BookHomeUpdata.css";
-import { Col } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 import TimeAgo from "timeago-react";
+import ListProductLoading from "@/app/ComponentStories/ui/list/ListProductLoading";
 
 interface newBooktype {
   newBook: typeGethome[];
@@ -11,8 +12,8 @@ interface newBooktype {
 const BookHomeUpdate: React.FC<newBooktype> = ({ newBook }) => {
   return (
     <>
-      <>
-        {newBook?.map((item, inx) => {
+      {newBook ? (
+        newBook?.map((item, inx) => {
           let genresArray = [];
           // const genresArray = item?.genres ? JSON.parse(`${item?.genres}`) : [];
           try {
@@ -30,7 +31,15 @@ const BookHomeUpdate: React.FC<newBooktype> = ({ newBook }) => {
               <Col xl={5} lg={5} md={6} sm={6} xs={6}>
                 <Link href={`${"/book/" + item.slug + "?page=1"}`}>
                   <div className="title-home-new">
-                    <span className="home-shared">{item.title}</span>
+                    <Row>
+                      <Col xl={10}>
+                        <span className="home-shared">{item.title}</span>
+                      </Col>
+
+                      <Col xl={2} className="badge-Story">
+                        {item.statusStory === "Full" ? <span>Full</span> : ""}
+                      </Col>
+                    </Row>
                   </div>
                 </Link>
               </Col>
@@ -63,8 +72,10 @@ const BookHomeUpdate: React.FC<newBooktype> = ({ newBook }) => {
               </Col>
             </div>
           );
-        })}
-      </>
+        })
+      ) : (
+        <ListProductLoading />
+      )}
     </>
   );
 };

@@ -32,7 +32,8 @@
     "src/app/admin/[user]/page.tsx",
     "src/app/book/[subpage]/subpage.tsx",
     "src/Helper/CreateInterceptors.tsx",
-    "src/app/ComponentStories/ui/icon/icon.js"
+    "src/app/ComponentStories/ui/icon/icon.js",
+    "src/app/user/[user]/game-farm/collision.js"
   ],
   "exclude": ["node_modules"]
 }

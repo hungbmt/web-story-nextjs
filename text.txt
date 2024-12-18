@@ -44,3 +44,36 @@ tile / hot new full
 hot nêu top ngày top tuần top tháng top năm card nao có view cao nhất sẻ có hot không thì để ""
 new mặc định 123
 full lấy data if dataGim?.statusStory full thì "full" không để ""
+
++ chức năng gim text in chapter
+
++ chức năng điểm danh
+ - + kinh nghiệm
+ - + tiền 
++ chức năng làm nv
++chức năng nông trại --> đang update 
+ -tưới nước bón phân diện cỏ diệt sâu ...
+ -kho
+ -chăn nuôi ...
+ -làm nhiệm vụ nông trại
++khu mua sắm ...
++notifition all -- admin
++notufition grup -- phân quyên grup
++chat grup
++chat user
+
+hinh anh theo thơi gian thu hoăch
+
+6 hinh / thơi gian thu hoăch
+
+
+---> tạo map đụng chạm 
+nêu đung padding 10px 
+
+
+--> updata chapter story
+  chỉ updata chapter khi có status là đang cập nhật 
+  đối chiếu xem chương cập nhật của web crawl với chapter trong database có giống nhau hay không
+  nếu không sẻ cập nhật chapter còn lại và xem trang thái có hoàn thành thì cập nhật lại và xóa link chapter cập nhật
+
+--> tối ưu crawl

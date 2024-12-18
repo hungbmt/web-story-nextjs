@@ -1,0 +1,354 @@
+.gameWrapper {
+  position: relative;
+  box-sizing: border-box;
+  max-width: 1200px;
+  height: 100%;
+  z-index: 12;
+  border-radius: 10px;
+  box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.5);
+  background-image: url("/map/mapgamefarm.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  overflow: scroll;
+}
+
+.map {
+  display: flex;
+  flex-direction: column; /* Đảm bảo các hàng được hiển thị ngang */
+  height: 100vh;
+}
+
+.row1 {
+  display: flex; /* Các ô trong hàng được dàn ngang */
+  flex-direction: row; /* Hiển thị các hàng trong cột */
+  overflow: auto;
+  width: 100vw;
+}
+
+.tile1 {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #ccc; /* Đường viền giữa các ô */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 6px;
+}
+
+.home {
+  position: absolute;
+  background-image: url("/game-farm/home.png");
+  z-index: 1000;
+  height: 180px;
+  width: 140px;
+  background-repeat: no-repeat;
+  top: 62px;
+  left: 577px;
+  transform: scale(1);
+  cursor: pointer;
+  image-rendering: pixelated;
+  transition: transform 0.1s ease-out;
+  background-size: initial;
+}
+
+.rake {
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+  background-image: url("/game-farm/rake.png");
+  z-index: 100;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 1200px;
+  height: 180px;
+  opacity: 0;
+}
+
+/* .pond-joint {
+  position: absolute;
+  background-image: url("/game-farm/ao.png");
+  z-index: 100;
+  top: 100px;
+  left: 20px;
+  background-size: 200px;
+  background-repeat: no-repeat;
+  width: 200px;
+  height: 200px;
+} */
+
+.show_table-tree--box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  width: 500px;
+  padding: 0.625rem;
+  background-color: #03a703;
+}
+
+.gameWrapper .coop-buy:hover {
+  transform: scale(1.1);
+}
+
+.plotWrapper {
+  position: absolute;
+  top: 350px;
+  left: 50px;
+}
+
+.gameWrapper .plotWrapper .plotBox {
+  border: 2px solid #a05b4a;
+  position: relative;
+  box-sizing: border-box;
+  height: 80px;
+  width: 80px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url("/game-farm/lua.png");
+}
+.gameWrapper .plotWrapper .plotBox.available {
+  background-position: 0px;
+  background-size: auto 80px;
+  animation: availablePlotAnim 0.8s linear infinite alternate;
+}
+.gameWrapper .plotWrapper .plotBox.ready {
+  animation: plotReadyAnim 0.7s linear alternate infinite;
+}
+.gameWrapper .plotWrapper .plotBox.plot {
+  background-position: 0px;
+  background-size: auto 80px;
+}
+.gameWrapper .plotWrapper .plotBox.seed-corn {
+  background-position: -80px;
+  background-size: auto 80px;
+}
+.gameWrapper .plotWrapper .plotBox.seedling-corn {
+  background-position: -160px;
+  background-size: auto 80px;
+}
+.gameWrapper .plotWrapper .plotBox.adolescent-corn {
+  background-position: -240px;
+  background-size: auto 80px;
+}
+.gameWrapper .plotWrapper .plotBox.mature-corn {
+  background-position: -320px;
+  background-size: auto 80px;
+}
+.gameWrapper .plotWrapper .plotBox.adult-corn {
+  background-position: -400px;
+  background-size: auto 80px;
+}
+
+.gameWrapper .plotWrapper .plotBox:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  border: 2px solid white;
+  background-color: #4f1507;
+}
+.gameWrapper .plotWrapper .plotBox:hover .tooltip {
+  opacity: 0.95;
+}
+.UIWrapper {
+  box-sizing: border-box;
+  width: 100%;
+  padding-top: 25px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  z-index: 10;
+  user-select: none;
+}
+.UIWrapper .money,
+.UIWrapper .seeds {
+  position: relative;
+  padding-right: 20px;
+  display: flex;
+  align-items: center;
+}
+.UIWrapper .money .emblem,
+.UIWrapper .seeds .emblem {
+  height: 40px;
+  width: 40px;
+  background-color: #823c3d;
+  background-image: url(https://art.pixilart.com/7736b1d30d303e4.gif);
+  background-size: 50px;
+  background-repeat: no-repeat;
+  background-position: 50% 20%;
+  border-radius: 40px;
+  border: 2px solid #351a1a;
+  z-index: 2;
+}
+.UIWrapper .money .text,
+.UIWrapper .seeds .text {
+  background: linear-gradient(180deg, #b2875a 80%, #705135 80%);
+  height: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  border-radius: 40px;
+  padding: 0px 20px 0px 54px;
+  margin-left: -40px;
+  border: 2px solid #351a1a;
+}
+.UIWrapper .money .text span,
+.UIWrapper .seeds .text span {
+  color: white;
+  font-weight: 800;
+  font-size: 20px;
+}
+.UIWrapper .money .message,
+.UIWrapper .seeds .message {
+  position: absolute;
+  bottom: -20px;
+  right: 30px;
+  color: white;
+  font-size: 14px;
+  text-shadow: 3px 4px 4px black;
+  opacity: 0;
+}
+.UIWrapper .seeds {
+  display: none;
+}
+.UIWrapper .seeds .emblem {
+  border-color: #35e835;
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQQqoSo3DNWGMOk5Hy6diLHRpE6h3o_Uw7qT5m3UMvcZZbt3DGv);
+  background-size: 90px;
+  background-position: 50% 50%;
+}
+.UIWrapper .seeds .text {
+  border-color: #35e835;
+}
+.UIWrapper .seeds .text span {
+  color: #03a703;
+}
+.UIMessageWrapper {
+  width: 100%;
+  position: absolute;
+  top: 162px;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 0px;
+  user-select: none;
+  z-index: 100;
+}
+.UIMessageWrapper .messsage {
+  background: white;
+  padding: 5px 20px;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 25px;
+  opacity: 0;
+}
+@keyframes availablePlotAnim {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+@keyframes plotReadyAnim {
+  from {
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    border: 2px solid #a05b4a;
+    background-color: #4f1507;
+  }
+  to {
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    border: 2px solid white;
+    background-color: #4f1507;
+  }
+}
+.reset {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 5px;
+  opacity: 0.5;
+  font-size: 11px;
+  cursor: pointer;
+}
+.hidden {
+  display: none !important;
+}
+
+.farm-chicken-box {
+  position: absolute;
+  width: 53px;
+  height: 54px;
+  background-position: 50px;
+  /* background-image: url("/game-farm/chickenblack.png"); */
+  z-index: 100;
+  background-repeat: no-repeat;
+  animation: moveBall 40s linear infinite;
+}
+
+.user-jonin {
+  position: absolute;
+  bottom: 180px;
+  left: 620px;
+  width: 30px;
+  background-size: 121px 50px;
+  height: 50px;
+  background-repeat: no-repeat;
+  background-image: url("/game-farm/player/playerDown.png");
+}
+
+@keyframes moveBall {
+  0% {
+    top: 50%;
+    left: 50%;
+  }
+  25% {
+    top: 50%;
+    left: 60%;
+  }
+  50% {
+    top: 50%;
+    left: 60%;
+  }
+  75% {
+    top: 50%;
+    left: 50%;
+  }
+  100% {
+    top: 50%;
+    left: 50%;
+  }
+}
+/* @keyframes moveBall {
+  0% {
+    top: 50%;
+    left: 50%;
+  }
+  25% {
+    top: 0;
+    left: 80%;
+    transform: translateX(-80%);
+  }
+  50% {
+    top: 60%;
+    left: 60%;
+    transform: translate(-60%, -60%);
+  }
+  75% {
+    top: 90%;
+    left: 0;
+    transform: translateY(-90%);
+  }
+  100% {
+    top: 50%;
+    left: 50%;
+  }
+} */
